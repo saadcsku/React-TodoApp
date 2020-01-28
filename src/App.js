@@ -1,26 +1,53 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { Component } from 'react';
+import ReactDOM from 'react-dom';
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component
+{
+    constructor()
+    {
+        super();
+        this.state={item:"", list:[]};
+    }
+    submitHandler()
+    {
+       let c=this.state.list.slice();
+       c.push(this.state.item);
+       this.setState({
+           list:c,
+           item:''
+       });
+    }
+    changeHandler(e)
+    {
+        this.setState({item: e.target.value});
+    }
+    deleteHandler(e)
+    {
+        let d=this.state.list.slice();
+        d.splice(e,1);
+        this.setState({
+            list: d,
+            item: ''
+        })
+    }
+    render()
+    {
+        let val = this.state.list.map((b,i) =>{
+           return ( <li key={i}>{b} <button onClick={this.deleteHandler.bind(this)} className="cross">X</button></li>
+            );
+        });
+        return(
+        <div className="container">
+                <h1>To-DO APP</h1>
+                <input type="text" value={this.state.item} id="todo" placeholder="Enter Task" onChange={this.changeHandler.bind(this)}/>
+                <button className="btnclass" onClick={this.submitHandler.bind(this)}>Submit</button>    
+                <div className="list-item">
+                    <h1>To-DO TASK</h1>              
+                {this.state.list.length===0 ? <ul></ul> : <ul>{val}</ul>}
+                </div>
+            </div>
+        );
+    }
 }
-
 export default App;

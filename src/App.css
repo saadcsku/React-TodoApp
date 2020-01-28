@@ -1,38 +1,64 @@
-.App {
-  text-align: center;
+.container
+{
+	width:800px;
+	margin:0 auto;
+	border: 2px solid #4caf50;
+    padding: 20px;
+
+}
+.container h1
+{
+	font-size:30px;
+	font-family:"Myriad Pro", "DejaVu Sans Condensed", Helvetica, Arial, sans-serif;
+	text-align:center;
+	font-weight:normal;
+	background-color:#4caf50;
+	padding: 20px 20px 20px 20px;
+	color:#FFFFFF;
+}
+.container input[type=text] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  padding: 20px 20px 20px 20px;
+}
+.btnclass {
+	color: #FFFFFF;
+    background-color: #BBBBBB;
+    width: 50%;
+    display: block;
+    margin: 0 auto;
+    padding: 20px 20px 20px 20px;
+    text-transform: uppercase;
+    font-size: 20px;
+}
+.list-item button
+{
+	background-color: transparent;
+	border:0px;
+	color:red;
+	font-size: 20px;
+	cursor: pointer;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.container ul li
+{
+	font-size:30px;
+	font-family:"Myriad Pro", "DejaVu Sans Condensed", Helvetica, Arial, sans-serif;	
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.list-item
+{
+	margin-top:100px;	
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.list-item ul
+{
+	text-align:center;
+	list-style:none;
 }
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.list-item a
+{
+	font-size:20px;
+	color:#FF0004;
+	text-decoration:none;
 }
